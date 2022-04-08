@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd 
 import math
 import seaborn as sns
-
+import csv
 
 
 # number 1
@@ -82,3 +82,10 @@ mid_gini = polit.groupby(['fh_status']).median()
 print('Max index gini :', max_gini['gini'].max())
 print('Min index gini :', min_gini['gini'].max())
 print('Mid index gini :', mid_gini['gini'].median())
+
+
+# number 8
+
+temp = polit.groupby(['fh_status'])
+for key, item in temp:
+        temp.get_group(key).to_csv('countries_'+ key +'.csv', sep='\t', encoding='utf-8')
