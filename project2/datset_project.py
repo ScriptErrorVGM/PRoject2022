@@ -65,3 +65,4 @@ dfx=dfx.groupby(['Release Year','Sentiment']).size().reset_index(name='Total Con
 dfx=dfx[dfx['Release Year']>=2010]
 fig4 = px.bar(dfx, x="Release Year", y="Total Content", color="Sentiment", title="Sentiment of content on Netflix")
 fig4.show()
+
